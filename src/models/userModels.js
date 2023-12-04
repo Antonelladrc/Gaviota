@@ -1,7 +1,7 @@
 /* este código proporciona una función para autenticar a los usuarios mediante la búsqueda de un 
 nombre de usuario y una contraseña coincidentes en una base de datos */
 
-var pool = require('./bd');
+var pool = require('./db');
 var md5 = require('md5');
 
 async function getUserByUsernameAndPassword(user, password){
