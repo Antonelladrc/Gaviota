@@ -55,7 +55,7 @@ app.use("/api", cors(), apiRouter);
 /* parte de codigo de clase */
 /* catch 404 */
 app.use(function(req, res, next){
-    next(createError(4044));
+    next(createError(404));
 })
 
 
