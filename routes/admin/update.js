@@ -7,7 +7,7 @@ const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get("/", async function (req, res, next) {
-  var product = await productModels.getProduct();
+  let product = await productModels.getProduct();
 
   product = product.map((product) => {
     if (product.img_id) {
@@ -43,7 +43,7 @@ router.get("/add", (req, res, next) => {
 
 router.post("/add", async (req, res, next) => {
   try {
-    var img_id = "";
+    let img_id = "";
     if (req.files && Object.keys(req.files).length > 0) {
       imagen = req.files.imagen;
       img_id = (await uploader(imagen.tempFilePath)).public_id;
